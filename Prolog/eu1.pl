@@ -1,11 +1,10 @@
-search(1000, Acc, Acc).
-search(X, Acc, Result) :-
-    set_new_acc(X, Acc, NewAcc),
-    Y is X + 1,
-    search(Y, NewAcc, Result).
+:- initialization search.
 
-set_new_acc(X, Acc, NewAcc) :-
-    (0 is mod(X, 3); 0 is mod(X, 5)),
-    NewAcc is Acc + X.
+search :-
+    findall(X, range(X), All),
+    sum_list(All, Sum),
+    print(Sum), nl, halt.
 
-set_new_acc(_, Acc, Acc).
+range(X) :-
+    between(1, 999, X),
+    (0 is X mod 3; (0 is X mod 5, 0 =\= X mod 15)).
