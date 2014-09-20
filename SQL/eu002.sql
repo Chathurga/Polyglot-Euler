@@ -8,7 +8,6 @@ BEGIN
 SELECT 0 INTO x1;
 SELECT 1 INTO x2;
 
-<<counter>>
 LOOP
     IF x2 < 4000000 THEN
         RETURN NEXT x2;
@@ -16,7 +15,7 @@ LOOP
         SELECT x2 INTO x1;
         SELECT x3 INTO x2;
     ELSE
-        EXIT counter;
+        RETURN;
     END IF;
 END LOOP;
 
