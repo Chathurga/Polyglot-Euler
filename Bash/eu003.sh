@@ -1,5 +1,5 @@
 # Using the handy factor command (GNU coreutils) makes this problem easy
 # factor returns a space seperated string, largest prime at the end
-# Use sed to match the last number on the line and extract it
+# Use awk to print out the last column which is the number we need
 
-factor 600851475143 | sed -r "s/.* ([0-9]+)$/\1/";
+factor 600851475143 | awk '{print $(NF)}';
