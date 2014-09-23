@@ -1,5 +1,5 @@
-#include<ostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 
 int main() {
     long n = 600851475143;
@@ -14,5 +14,5 @@ int main() {
         next:;
     }
 
-    printf("%d\n", (int)n);
+    std::cout << n << std::endl;
 }
