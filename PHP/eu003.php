@@ -1,14 +1,16 @@
 <?php
- 
-list($x1, $x2, $sum) = array(0, 1, 0);
-while ($x2 < 4000000) {
-    if ($x2 % 2 == 0) {
-        $sum += $x2;
+
+$primes = array(2);
+$n = 600851475143;
+for ($x = 3; $n != $x; $x += 2) {
+    foreach ($primes as $prime) {
+        if ($x % $prime == 0) {
+            continue 2;
+        }
     }
-    $tmp = $x1 + $x2;
-    $x1 = $x2;
-    $x2 = $tmp;
+    $primes[] = $x;
+    if ($n % $x == 0) $n /= $x;
 }
-echo $sum . "\n";
- 
+echo "${n}\n";
+
 ?>
