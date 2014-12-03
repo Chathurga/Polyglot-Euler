@@ -1,6 +1,6 @@
-#include<math.h>
-#include<stdlib.h>
-#include<stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 int main() {
     long n = 600851475143;

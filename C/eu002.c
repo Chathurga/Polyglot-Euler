@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main() {
     int x1 = 0, x2 = 1, x3, sum = 0;
