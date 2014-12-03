@@ -4,21 +4,21 @@
 //   style
 
 var primes = function(callback) {
-    var primes = [2];
+    var list = [2];
     next: for (var x = 3; ; x += 2) {
-        for (var prime, i = 0; (prime = primes[i]); i++) {
+        for (var prime, i = 0; (prime = list[i]); i++) {
             if (x % prime == 0) continue next;
         }
-        primes.push(x);
+        list.push(x);
         if (callback(x) === false) return;
     }
 }
 
 var n = 600851475143;
-primes(function(x) {
-    if (n == x) {
-        console.log(x);
+primes(function(prime) {
+    if (n == prime) {
+        console.log(prime);
         return false;
     }
-    if (n % x == 0) n /= x;
+    if (n % prime == 0) n /= prime;
 });
